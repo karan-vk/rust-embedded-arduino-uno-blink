@@ -31,6 +31,24 @@ Everything is prepared so you should be able to just
 cargo run
 ```
 
+## Flash
+```bash
+sudo avrdude -p m328p -c arduino -P /dev/ttyACM0 -b 115200 -U flash:w:rust-blink.elf
+```
+
+## Monitor
+```bash
+sudo minicom -D /dev/ttyACM0 -b 115200
+```
+
+## Dependencies
+- community/arduino-avr-core
+- community/avr-binutils
+- community/avr-gcc
+- community/avr-gcc
+- community/avr-libc
+- community/avrdude
+
 and see a blinky flashed to your board!
 
 [`cargo-generate`]: https://github.com/cargo-generate/cargo-generate
